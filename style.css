@@ -1,0 +1,97 @@
+:root{
+  --uiBG: rgba(6,6,10,0.6);
+  --accent: #ffd58a;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#000;font-family:Inter,system-ui,Arial}
+canvas#c{display:block;width:100vw;height:100vh}
+
+/* Start overlay (initial) */
+#startOverlay{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9));z-index:40;
+}
+#startBox{
+  background: rgba(10,10,12,0.95); color:#fff; padding:28px; border-radius:12px;
+  width:min(520px,92%); text-align:center; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+#startBox h1{margin:0 0 8px; font-size:44px; letter-spacing:6px}
+#startBox p{margin:0 0 18px; color:#ddd}
+#enterBtn{
+  background:linear-gradient(180deg,var(--accent),#ffb84d); border:none; padding:10px 18px;
+  border-radius:8px; font-weight:700; cursor:pointer;
+}
+
+/* HUD */
+#hud{position:fixed;left:18px;top:18px;z-index:30;pointer-events:none}
+#title{color:#fff;font-size:26px;letter-spacing:4px;text-shadow:0 6px 30px rgba(0,0,0,0.7)}
+#hint{color:#cfcfcf;font-size:12px;margin-top:6px;opacity:0.9}
+
+/* Info card */
+#infoCard{
+  position:fixed;right:18px;bottom:18px;z-index:30;max-width:360px;width:calc(35vw);
+  padding:14px;border-radius:10px;background:var(--uiBG);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.6);
+}
+#infoCard.hidden{display:none}
+#infoCard h2{margin:0 0 6px;font-size:18px}
+#infoCard p{margin:0;font-size:13px;line-height:1.4}
+#closeInfo{position:absolute;right:8px;top:6px;background:none;border:none;color:#fff;font-size:18px;cursor:pointer}
+
+/* small screens */
+@media (max-width:600px){
+  #infoCard{left:6vw;right:6vw;bottom:12px;width:auto}
+  #startBox h1{font-size:34px}
+}
+/* Profile selection (start overlay) */
+#profileSelection {
+  margin-top: 20px;
+}
+
+.profileList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.profile {
+  padding: 10px 15px;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.profile:hover {
+  transform: scale(1.1);
+  background: #444;
+}
+
+.hidden { display: none; }
+/* Welcome message at top of screen */
+#welcomeMessage {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd58a;
+  text-align: center;
+}
+
+#nameInput {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1f;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  margin-top: 8px;
+}
+
+#nameInput:focus {
+  border-color: #ffd58a;
+}
