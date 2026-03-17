@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cave Explorer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Start overlay (user gesture required for audio) -->
+<div id="startOverlay">
+  <div id="startBox">
+    <h1>BECOME A CAVE EXPLORER!</h1>
+    <p>You are a troglobite exploring the darkness.<br>
+       Move your mouse to use your torch. Click objects to examine them.<br>
+       Click ENTER to begin your journey.</p>
+
+    <div id="profileSelection">
+  <p>Who are you?</p>
+  <input type="text" id="nameInput" placeholder="Enter your name..." autocomplete="off" />
+  <p id="welcomeMessage" class="hidden"></p>
+</div>
+
+    <!-- SINGLE welcome message container, below profiles -->
+    <div id="welcomeMessage" class="hidden"></div>
+
+    <button id="enterBtn">ENTER</button>
+  </div>
+</div>
+
+  <!-- Title & info -->
+  <div id="hud">
+    <div id="title">CAVES</div>
+    <div id="hint">Mouse = torch · Click = inspect</div>
+  </div>
+
+  <!-- Info card -->
+  <div id="infoCard" class="hidden">
+    <button id="closeInfo" aria-label="close">×</button>
+    <h2 id="infoTitle"></h2>
+    <p id="infoText"></p>
+  </div>
+
+  <!-- canvas -->
+  <canvas id="c"></canvas>
+
+  <!-- three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- app -->
+  <script src="script.js"></script>
+</body>
+</html>
